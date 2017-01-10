@@ -1,0 +1,67 @@
+{% extends "layout2.html" %} {% block body %}
+<div id="main">
+    <div class="row" class="search">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="weight">Weight:</label>
+                <input type="text" placeholder="Weight" class="form-control" id="weight">
+            </div>
+            <div class="form-group">
+                <label for="height">Height:</label>
+                <input type="text" placeholder="Feet" class="form-control" id="height_ft">
+                <input type="text" placeholder="Inches" class="form-control" id="height_in">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="text" placeholder="Age" class="form-control" id="age">
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <input type="text" placeholder="Gender" class="form-control" id="gender">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    Activity
+                    <span class="caret"></span>
+                </button>
+                <ul id="activitylist" class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li><a href="#">bmr</a></li>
+                    <li><a href="#">mild</a></li>
+                    <li><a href="#">moderate</a></li>
+                    <li><a href="#">heavy</a></li>
+                    <li><a href="#">extreme</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row search" id = "restrictions" value = {{ restrictions }}>
+        <div class="col-md-4">
+            <label class="checkbox-inline">
+                <input type="checkbox" class="restriction" id = "gluten" value="gluten">Gluten free</label>
+            <label class="checkbox-inline">
+                <input type="checkbox" class="restriction" id = "tree_nutes" value="tree_nuts">Tree nut allergy</label>
+            <label class="checkbox-inline">
+                <input type="checkbox" class="restriction" id = "eggs" value="eggs">Egg free</label>
+            <label class="checkbox-inline">
+                <input type="checkbox" class="restriction" id = "milk" value="milk">Dairy free</label>
+            <label class="checkbox-inline">
+                <input type="checkbox" class="restriction" id = "peanuts" value="peanuts">Peanut free</label>
+            <label class="checkbox-inline">
+                <input type="checkbox" class="restriction" id = "shellfish" value="shellfish">Shellfish free</label>
+            <label class="checkbox-inline">
+                <input type="checkbox" class="restriction" id = "soybeans" value="soybeans">Soybean free</label>
+            <label class="checkbox-inline">
+                <input type="checkbox" class="restriction" id = "wheat" value="wheat">Wheat free</label>
+        </div>
+    </div>
+    <div class="row search">
+        <div class="col-md-4">
+            <button type="button" class="btn btn-default" id="go">Go</button>
+        </div>
+    </div>
+</div>
+{% endblock %}

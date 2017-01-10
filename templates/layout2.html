@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Eat Food!</title>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/lib/bootstrap/css/bootstrap.min.css') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style2.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='js/lib/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='css/lib/bootstrap/js/bootstrap.min.js') }}"></script>
+</head>
+
+<body data-sidebar-color="sidebar-light" class="sidebar-light">
+    <header>
+        <img id="logo" src="static/img/logo.png">
+        <!--<img id="navheader" style="min-width:100%; display:block;" src="static/img/navigation_header.png">-->
+        <nav class="navbar navbar-inner">
+            <div class="container-fluid">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/"> '  </a></li>
+                    <li><a href="/journal">  ' </a></li>
+                    <li><a href="/search">  '  </a></li>
+                    <li><a href="/links">  '</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container-fluid">
+        {% block body %}{% endblock %}
+    </div>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script type="text/javascript">
+        jQuery(function ($) {
+            $(".image-checkbox").each(function () {
+                if ($(this).find('input[type="checkbox"]').first().attr("checked")) {
+                    $(this).addClass('image-checkbox-checked');
+                }
+                else {
+                    $(this).removeClass('image-checkbox-checked');
+                }
+            });
+            $(".image-checkbox").on("click", function (e) {
+                if ($(this).hasClass('image-checkbox-checked')) {
+                    $(this).removeClass('image-checkbox-checked');
+                    $(this).find('input[type="checkbox"]').first().removeAttr("checked");
+                }
+                else {
+                    $(this).addClass('image-checkbox-checked');
+                    $(this).find('input[type="checkbox"]').first().attr("checked", "checked");
+                }
+                e.preventDefault();
+            });
+        });
+    </script>
+    <style>
+        .image-checkbox {
+            cursor: pointer;
+            box-sizing: border-box;
+            border-radius: 9px;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            border: 3px solid transparent;
+            outline: 0;
+        }
+
+        .image-checkbox input[type="checkbox"] {
+            display: none;
+        }
+
+        .image-checkbox-checked {
+            border-color: #7599bc;
+        }
+    </style>
+</body>

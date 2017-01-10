@@ -1,0 +1,54 @@
+{% extends "layout2.html" %} {% block body %}
+<div class="row">
+    <div class="col-md-4">
+        <div class="form-group">
+            <label for="food">What did you eat?</label>
+            <input type="text" placeholder="Food" class="form-control" id="food">
+        </div>
+        <div class="form-group" id="feelingsForm">
+            <label for="feelings">How do you feel about it?</label>
+            <br>
+            <label class="image-checkbox" title="Content">
+                <img src="/static/img/content.png" id="content" value=-1 class="img-rounded" alt="content" width="83" height="75p">
+            </label>
+            <label class="image-checkbox" title="Happy">
+                <img src="/static/img/happy.png" id="happy" value=-1 class="img-rounded" alt="happy" width="83" height="75p">
+            </label>
+            <label class="image-checkbox" title="Excited">
+                <img src="/static/img/excited.png" id="excited" value=-1 class="img-rounded" alt="excited" width="83" height="75p">
+            </label>
+            <label class="image-checkbox" title="Neutral">
+                <img src="/static/img/neutral.png" id="neutral" value=-1 class="img-rounded" alt="neutral" width="83" height="75p">
+            </label>
+            <label class="image-checkbox" title="Angry">
+                <img src="/static/img/angry.png" id="angry" value=-1 class="img-rounded" alt="angry" width="83" height="75p">
+            </label>
+            <label class="image-checkbox" title="Frustrated">
+                <img src="/static/img/frustrated.png" id="frustrated" value=-1 class="img-rounded" alt="frustrated" width="83" height="75p">
+            </label>
+            <label class="image-checkbox" title="Sick">
+                <img src="/static/img/sick.png" id="sick" value=-1 class="img-rounded" alt="sick" width="83" height="75p">
+            </label>
+            <label class="image-checkbox" title="Sad">
+                <img src="/static/img/sad.png" id="sad" value=-1 class="img-rounded" alt="sad" width="83" height="75p">
+            </label>
+            <label class="image-checkbox" title="Disappointed">
+                <img src="/static/img/disappointed.png" id="disappointed" value=-1 class="img-rounded" alt="disappointed" width="83" height="75p">
+            </label>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label for="notes">Notes:</label>
+            <textarea class="form-control" rows="11" id="notes"></textarea>
+        </div>
+        <button type="button" class="btn btn-default" id="submit" onclick="enterFeelings()">Go</button>
+    </div>
+</div>
+
+<div class="row">
+    <button type="button" class="btn btn-default" id="submit" onclick="getCalendar()">View Calendar</button>
+</div>
+<div class="row" id="calendar"></div>
+</div>
+{% endblock %}

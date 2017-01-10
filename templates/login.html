@@ -1,0 +1,37 @@
+{% extends "layout.html" %} {% block body %}
+<div id="accountStuff">
+    <div class="row" class="logo">
+        <img id="logo" src="static/img/logo.png">
+    </div>
+    <div id="login">
+        <div class="row">
+            <h2>Login</h2>
+            <form>
+                <dl>
+                    <label>Username:</label>
+                    <input type=text id="username" name=username>
+                    <br>
+                    <label>Password:</label>
+                    <input type=password id='password' name=password>
+                    <br>
+                    <input class = "button" type=submit value=Login onclick="login($('#username').val(), $('#password').val())">
+                </dl>
+            </form>
+        </div>
+        <div class="row">
+            <h2>Create a User</h2>
+            <form>
+                <dl>
+                    <label>Username:</label>
+                    <input type=text id="user" name=username>
+                    <br>
+                    <label>Password:</label>
+                    <input type=password id='pass' name=password>
+                    <br>
+                    <input class = "button" type=submit value="Create a User" onclick="createUser($('#user').val(), $('#pass').val())">
+                </dl>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
